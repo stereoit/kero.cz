@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+	{% block page_title %}Aktuality{% endblock %}
+	{% block title %}Aktuality{% endblock %}
+	{% block menu %}{% include "includes/menu.html" with active_tab="news" %}{% endblock %}
+
+	{% block main-content %}
+	<p>Zde naleznete novinky o aktuálním dění.</p>
+	<br/>
+	{% for news in news_list %}
+	<div class="news">
+		<h3>{{ news.title }}</h3>
+		<p>{{ news.text|safe }}</p>
+			<span><i>{{ news.published|date:"SHORT_DATETIME_FORMAT"}}, {{ news.published_by }}</i></span><br>
+	</div>
+	<hr/>
+	{% endfor %}
+	{% endblock %}

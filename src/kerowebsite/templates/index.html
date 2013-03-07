@@ -1,141 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Template &middot; Bootstrap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+{% extends "base.html" %}
+{% load newstags %}
+{% block page_style %}
+<style type="text/css">
+    /* Main marketing message and sign up button */
+    .jumbotron {
+    margin: 60px 0;
+    text-align: center;
+    }
+    .jumbotron h1 {
+    font-size: 72px;
+    line-height: 1;
+    }
+    .jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+    }
 
-    <!-- Le styles -->
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
+    /* Supporting marketing content */
+    .marketing {
+    margin: 60px 0;
+    }
+    .marketing p + h4 {
+    margin-top: 28px;
+    }
+</style>
+{% endblock %}
 
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 700px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
+{% block maincontent %}
 
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
+    <hr>
 
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-    </style>
-    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <div class="jumbotron">
+        <img src="{{ STATIC_URL }}banner.png" width="690px;"/>
+        <!--
+        <h1>Super awesome marketing speak!</h1>
+        -->
+    <p class="lead">Snižte Vaše náklady na osvětlení až o 90%! Naše úsporné LED světlo v různé barvě a intenzitě až s pětiletou zárukou, to dokáže. </p>
+    <a class="btn btn-large btn-success" href="#">Dozvědět se více..</a>
+    </div>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="static/js/html5shiv.js"></script>
-    <![endif]-->
+    <hr>
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="static/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="static/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="static/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="static/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="static/ico/favicon.png">
-  </head>
+    <div class="row-fluid marketing">
+    <div class="span12">
+        <div id="news_tag">{% news_tag 3 %}</div>
 
-  <body>
+    </div>
 
-    <div class="container-narrow">
+    </div>
 
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Úvod</a></li>
-          <li><a href="#">O Produktu</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-        <h3 class="muted">Kero.cz</h3>
-      </div>
-
-      <hr>
-
-      <div class="jumbotron">
-          <img src="{{ STATIC_URL }}banner.png" width="690px;"/>
-          <!--
-          <h1>Super awesome marketing speak!</h1>
-          -->
-        <p class="lead">Snižte Vaše náklady na osvětlení až o 90%! Naše úsporné LED světlo v různé barvě a intenzitě, ale vždy s pětiletou zárukou, to dokáže. </p>
-        <a class="btn btn-large btn-success" href="#">Dozvědět se více..</a>
-      </div>
-
-      <hr>
-
-      <div class="row-fluid marketing">
-        <div class="span6">
-          <h4>Novinka</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Novinka</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Novinka</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-
-        <div class="span6">
-          <h4>Novinka</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Novinka</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Novinka</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="footer">
-        <p>&copy; Kero s.r.o. 2013</p>
-      </div>
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ STATIC_URL }}js/jquery.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootsttap-transition.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-alert.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-modal.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-dropdown.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tab.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-tooltip.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-popover.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-button.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-carousel.js"></script>
-    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap-typeahead.js"></script>
-
-  </body>
-</html>
-
+{% endblock %}

@@ -1,0 +1,10 @@
+{% for i in news %}
+<div class="news span6">
+    <div class="title"><h4>{{ i.title }}</h4></div>
+  <div class="subtitle">
+      <span class="date_label">Dne:</span> <span>{{ i.published|date }}</span> {% comment %}<span>{{ i.published|date }}</span> {% comment %}<span class="date_label">Od:</span> <span>{{ i.published_by }}</span>{% endcomment %}
+  </div>
+  <div class="message"> <p>{{ i.text|safe }}</p></div>
+</div>
+{% endfor %}
+
